@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="BATC">
+        <title>The Grave Site</title>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="css/w3.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+	    <header>
+            <div class="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#openModal">Login</a></li>
+                    </ul>
+			     </nav>
+            <div id="openModal" class="modalDialog">
+                <div><a href="#close" title="Close" class="close">X</a>
+                    <!-- content for Modal -->
+                    <div class="login">
+                        <h2>Sign in</h2>
+                        <form data-parsley-validate="" id="demo-form" action="" name="loginform">
+                            <input type="email" name="email" placeholder="Email" required="">
+                            <input type="password" name="password" placeholder="Password" required="">
+                            <input type="submit" value="Login" name="login_submit" class="form-control">
+                        </form>
+                    </div><!-- end login -->
+                </div><!-- end close -->
+            </div><!-- end openModal -->
+        </div> <!-- end navbar -->
+    </header>
+
+    <!--  =========== Hero ============= -->
+
+    <section id="contactHero"></section>
+
+    <!---- ==== Description ====== ----->
+
+        <div class="description">
+            <h2>Contact Us</h2> <hr>
+                <div id="messageInvite">
+                    <h3>Send us a message and we will get back to you as soon as we can!</h3>
+                </div>
+            </div>
+
+            <!--------- == Message Forms == ---->
+
+        <div id="contactUs">
+          <div class="bs-callout bs-callout-warning hidden"><!-- parsley validation failure -->
+            <h4>Oh snap!</h4>
+            <p class="hidden-fail">This form seems to be invalid :(</p>
+          </div>
+
+          <div class="bs-callout bs-callout-info hidden"><!-- parsley validation success -->
+            <h4>Yay!</h4>
+            <p class="hidden-success">Everything seems to be ok :)</p>
+          </div>
+
+            <form action="" name="contact" data-parsley-validate="" id="demo-form">
+                <div id="formContainer">
+                    <div><input class="contact-id form-control" type="text" name="fullname" placeholder="Full Name" class="form-control" required=""></div>
+                    <div><input class="contact-id" type="text" name="subject" placeholder="Subject" required=""></div>
+                    <div><input class="contact-id" type="text" name="phone" placeholder="Phone Number" required=""></div>
+                    <div><input class="contact-id" type="email" name="emailAddress" placeholder="Email Address" class="form-control" data-parsley-trigger="change" required=""></div>
+                </div>
+                <h4>Message</h4>
+                <div id="messageDiv">
+                    <input class="contact-id form-control" id="message" type="text" name="message" data-parsley-trigger="keyup" data-parsley-minlength="10" data-parsley-max-length="20" data-parsley-minlength-message="Must put 10 characters" data-parsley-validation-threshold="10" required=""><br>
+                </div>
+                <input type="submit" class="button_next" name="contact_submit" value="Send Message" class="form-control" name="message">
+            </form>
+        </div>
+        <footer>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="blog.html">Blog</a></li>
+				</ul>
+			</nav>
+		</footer>
+    </body>
+    <script src="js/parsley.min.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript"> // parsley validation
+      $(function () {
+        $('#demo-form').parsley().on('field:validated', function() {
+        var ok = $('.parsley-error').length === 0;
+        $('.bs-callout-info').toggleClass('hidden', !ok);
+        $('.bs-callout-warning').toggleClass('hidden', ok);
+      })
+        .on('form:submit', function() {
+          return false;
+        });
+      });
+    </script>
+</html>
