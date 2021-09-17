@@ -3087,12 +3087,20 @@ body.is-touch .poptrox-popup .closer {
   textarea {
     font-size: 12pt;
   }
+
+	#locallogan {
+		height: 204px;
+	}
 }
 
 /* Large */
 
 @media screen and (max-width: 1280px) {
   /* Header */
+
+#locallogan {
+	height: 168px;
+}
 
   #header {
     padding: 6em 3em 3em 3em;
@@ -3135,6 +3143,10 @@ body.is-touch .poptrox-popup .closer {
 
 @media screen and (max-width: 980px) {
   /* Basic */
+
+	#locallogan {
+		height: 236px;
+	}
 
   h1 br,
   h2 br,
@@ -3221,6 +3233,9 @@ body.is-touch .poptrox-popup .closer {
 @media screen and (max-width: 736px) {
   /* Basic */
 
+	#locallogan {
+		height: 180px;
+	}
   h1 {
     font-size: 1.5em;
   }
@@ -3297,6 +3312,8 @@ body.is-touch .poptrox-popup .closer {
 
 @media screen and (max-width: 480px) {
   /* Header */
+
+
 
   #header {
     padding: 4.5em 1.5em;
